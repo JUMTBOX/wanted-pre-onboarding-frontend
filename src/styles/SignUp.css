@@ -1,0 +1,36 @@
+.signup_container {
+  width: 100%;
+  height: 100vh;
+  background-color: #635fff;
+}
+.signup_container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.signup_container input {
+  line-height: 2rem;
+  padding: 0.375rem 1rem;
+}
+.signup_container input:focus {
+  outline-color: #635fff;
+}
+.signup_container button {
+  text-align: center;
+  line-height: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+}
+.signup_container .logo {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #67ff5f;
+  margin-bottom: 1.5rem;
+}
+.signup_container .logo img {
+  width: 50%;
+  height: 90%;
+}/*# sourceMappingURL=SignUp.css.map */

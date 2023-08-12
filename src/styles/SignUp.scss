@@ -1,0 +1,36 @@
+.signup_container {
+  width: 100%;
+  height: 100vh;
+  background-color: #635fff;
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  input {
+    line-height: 2rem;
+    padding: 0.375rem /* 6px */ 1rem /* 16px */;
+    &:focus {
+      outline-color: #635fff;
+    }
+  }
+  button {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+  }
+  .logo {
+    height: 30%;
+    img {
+      width: 50%;
+      height: 90%;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #67ff5f;
+    margin-bottom: 1.5rem;
+  }
+}
