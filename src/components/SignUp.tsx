@@ -24,7 +24,7 @@ export default function SignUp() {
       }
     );
     if (res.status === 201) {
-      window.alert("회원가입 성공!");
+      window.alert("회원가입");
       navigate("/signin");
     } else {
       console.log(res.data);
