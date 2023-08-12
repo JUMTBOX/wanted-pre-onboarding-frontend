@@ -24,7 +24,7 @@ export default function SignUp() {
       }
     );
     if (res.status === 201) {
-      window.alert("회원가입");
+      window.alert("회원가입 성공!");
       navigate("/signin");
     } else {
       console.log(res.data);
@@ -69,7 +69,7 @@ export default function SignUp() {
           <div className="logo">
             <img src="/assets/images/pre.png" alt="logo" />
           </div>
-          <div className="flex justify-center">
+          <div className="input_box flex justify-center">
             <input
               data-testid="email-input"
               type="email"
@@ -83,7 +83,7 @@ export default function SignUp() {
               onChange={emailOnchange}
             />
           </div>
-          <div className="flex justify-center">
+          <div className="input_box flex justify-center">
             <input
               data-testid="password-input"
               type="password"
@@ -94,7 +94,7 @@ export default function SignUp() {
               onChange={passwordOnchange}
             />
           </div>
-          <div className="flex justify-center">
+          <div className="input_box flex justify-center">
             <button
               data-testid="signup-button"
               onClick={handleSubmit}

@@ -21,6 +21,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: white;
+  background-color: white;
 }
 .signup_container .logo {
   height: 30%;
@@ -33,4 +34,7 @@
 .signup_container .logo img {
   width: 50%;
   height: 90%;
+}
+.signup_container .input_box {
+  background-color: white;
 }/*# sourceMappingURL=SignUp.css.map */

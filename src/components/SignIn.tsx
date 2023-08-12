@@ -85,7 +85,7 @@ export default function SignIn() {
           <div className="logo">
             <img src="/assets/images/pre.png" alt="logo" />
           </div>
-          <div className="flex justify-center">
+          <div className="input_box flex justify-center">
             <input
               data-testid="email-input"
               type="email"
@@ -99,7 +99,7 @@ export default function SignIn() {
               onChange={emailOnchange}
             />
           </div>
-          <div className="flex justify-center">
+          <div className="input_box flex justify-center">
             <input
               data-testid="password-input"
               type="password"
@@ -110,7 +110,7 @@ export default function SignIn() {
               onChange={passwordOnchange}
             />
           </div>
-          <div className="flex justify-center">
+          <div className="input_box flex justify-center">
             <button
               data-testid="signin-button"
               onClick={loginRequest}
