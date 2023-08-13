@@ -56,6 +56,9 @@ export default function SignUp() {
         checkyong.current.style.backgroundColor = "#59e251";
       }
     }
+    if (localStorage.getItem("access_token")) {
+      navigate("/todo");
+    }
   }, [emailCur, passwordCur]);
 
   return (

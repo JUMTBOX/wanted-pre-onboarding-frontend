@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/Todo.css";
 import ListItem from "./ListItem";
-import Mod from "./Mod";
 
 export default function Todo() {
   const [willMod, setWillMod] = useState<number>(0);
@@ -37,7 +36,7 @@ export default function Todo() {
 
   //Todo 생성 요청
   const createTodoList = async (todo: string) => {
-    const res = await axios.post(
+    await axios.post(
       "https://www.pre-onboarding-selection-task.shop/todos",
       { todo: todo },
       {
@@ -66,14 +65,16 @@ export default function Todo() {
   const getModified = (id: number) => {
     setWillMod(id);
   };
+
   //로컬 스토리지에 토큰이 없는 상태로 /todo페이지에 접속한다면 /signin 경로로 리다이렉트
   useEffect(() => {
     if (!localStorage.getItem("access_token")) {
       navigate("/signin");
+    } else {
+      //Todo 리스트 목록 요청 실행
+      getTodoList();
     }
-    //Todo 리스트 목록 요청 실행
-    getTodoList();
-  }, [todos]);
+  }, [todos, willMod]);
 
   return (
     <div className="todo_container flex justify-center w-2/3 h-4/5 bg-white shadow-xl rounded-lg">
@@ -81,29 +82,29 @@ export default function Todo() {
         <div className="flex space-x-8">
           <input
             type="text"
+            data-testid="new-todo-input"
             className="input_add w-80 ring-1 ring-inset ring-gray-400 rounded-md px-4 py-1"
             ref={inputRef}
           />
           <button
+            data-testid="new-todo-add-button"
             className="add_btn shadow-md px-4 py-1 rounded-md"
             onClick={handleOnclick}
           >
             추가
           </button>
         </div>
-        <ul className="content_box w-full space-y-8">
-          {todos.map((el: any, idx) =>
-            willMod !== el.id ? (
-              <ListItem
-                el={el}
-                deleteTodoList={deleteTodoList}
-                getId={getModified}
-                key={idx}
-              />
-            ) : (
-              <Mod el={el} key={idx} setWillMod={setWillMod} />
-            )
-          )}
+        <ul className="content_box w-full space-y-4">
+          {todos.map((el: any, idx) => (
+            <ListItem
+              el={el}
+              deleteTodoList={deleteTodoList}
+              getId={getModified}
+              willMod={willMod}
+              setWillMod={setWillMod}
+              key={idx}
+            />
+          ))}
         </ul>
       </div>
     </div>
