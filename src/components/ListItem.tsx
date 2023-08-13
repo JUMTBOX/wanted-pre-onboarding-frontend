@@ -101,7 +101,13 @@ export default function ListItem({
             >
               제출
             </button>
-            <button data-testid="cancel-button" onClick={() => setWillMod(0)}>
+            <button
+              data-testid="cancel-button"
+              onClick={() => {
+                setWillMod(0);
+                setNewTodo(el.todo);
+              }}
+            >
               취소
             </button>
           </>
