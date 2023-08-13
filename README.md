@@ -1,4 +1,4 @@
-# wanted_preonboarding_internship
+# wanted_pre_onboarding_frontend_internship
 
 지원자 성명 - 양재연
 
